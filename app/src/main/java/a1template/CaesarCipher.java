@@ -20,6 +20,12 @@ public class CaesarCipher {
      */
     CaesarCipher(int offset){
         // Fill in here
+        this.offset = offset;
+        this.alphabet = new Character[26];
+        for(int i = 0; i < 26; i++){
+            alphabet[i] = (char) ('A' + i);
+        }
+        this.cipher = new DynamicArray<>(alphabet);
     }
 
     /** Implementation of linear search that looks through the alphabet
@@ -30,17 +36,28 @@ public class CaesarCipher {
     public int findIndex(char val){
         // This is a stub -- fill in the code and return the
         // value you calculate
+        for (int i = 0; i < alphabet.length; i++){
+            if(alphabet[i] == val){
+                return i; 
+            }
+        }
         return 0;
     }
 
     /** Encode a message using the cipher
      * @param T message to encode
      * @return encoded message */  
-    public String encode(String message){
-        // Fill in here and update return statement based on your code
-        return new String(); 
-     }
-
+    public String encode(String message) {
+        String result = "";
+        for (char c : message.toCharArray()) {
+            int index = findIndex(c);
+            if (index != -1) {
+                result += cipher.get(index, offset);
+             }
+         }System.out.println(result);
+        return result;
+            
+        }
     /** Decode a message using the cipher 
      * @param String message to decode
      * @param int key to use in decoding
@@ -48,10 +65,21 @@ public class CaesarCipher {
     */
     public String decode(String message){
         // Fill in here and update return statement based on your code
-        return new String();
+        String result = "";
+        for (char c : message.toCharArray()) {
+            int index = findIndex(c);
+            if (index != -1) { 
+                result += cipher.get(index, -offset); 
+            }
+        }
+        System.out.println(result);
+        return result;
     }
 
     public static void main(String[] args) {
+       CaesarCipher cipher = new CaesarCipher(1);
+        cipher.encode("HELLO");
+        cipher.decode("IFMMP");
     }
     
 }
