@@ -24,7 +24,7 @@ public class DynamicArray<T> implements IndexAccess<T>{
         if(newIndex < 0){
             newIndex += size;
         }
-        return arr[newIndex];
+        return arr[newIndex]; 
     }
     public void set(int i, T val){
         if (i < 0 || i >= size) throw new IndexOutOfBoundsException("Index out of bounds");

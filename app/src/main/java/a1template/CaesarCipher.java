@@ -19,7 +19,7 @@ public class CaesarCipher {
      * @param offset Offset to use when creating `cipher` of DynamicArray type
      */
     CaesarCipher(int offset){
-        // Fill in here
+        // Fill in here 
         this.offset = offset;
         this.alphabet = new Character[26];
         for(int i = 0; i < 26; i++){
