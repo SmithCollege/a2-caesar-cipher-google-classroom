@@ -8,7 +8,7 @@ public class DynamicArray<T> implements IndexAccess<T>{
     private T [] arr;
     private int size;
 
-    // Write a constructor to make a new DynamicArray Object from an array
+    // Write a constructor to make a new DynamicArray Object from an array test
     public DynamicArray(T[] arr){
         this.arr = arr;
         this.size = arr.length; 

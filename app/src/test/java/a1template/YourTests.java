@@ -4,7 +4,7 @@ package a1template;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-@test
+
 public class YourTests {
     public void encodeTest(){
         CaesarCipher test = new CaesarCipher(3);
