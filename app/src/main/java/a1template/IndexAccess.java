@@ -13,7 +13,7 @@ public interface IndexAccess<T> {
     /** Returns the value stored at a given index plus the offset
      * @param i index of element to read
      * @param offset adjust index by this value
-     * @return value stored at the given index
+     * @return value stored at the given index 
      */
     public T get(int i, int offset);
 
